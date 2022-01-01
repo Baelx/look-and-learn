@@ -1,0 +1,7 @@
+# API
+api/.env
+api/node_modules
+
+# Frontend
+frontend/.env
+frontend/node_modules

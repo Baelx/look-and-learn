@@ -1,0 +1,19 @@
+name: Test and lint node api
+on:
+  pull_request:
+    branches: [ dev ]
+    paths: 
+      - "api/**/*"
+defaults:
+  run:
+    working-directory: api/
+jobs:
+  test_pull_request:
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm test
