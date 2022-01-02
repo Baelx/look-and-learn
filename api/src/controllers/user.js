@@ -1,18 +1,6 @@
-// Dummy data
-const users = [
-    {
-        id: 1,
-        name: 'Alex'
-    },
-    {
-        id: 2,
-        name: 'Bill'
-    },
-    {
-        id: 3,
-        name: 'Terrence'
-    }
-]
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const config = require('../config');
 
 /**
  * Get all users.
@@ -20,7 +8,7 @@ const users = [
  * @returns {Array}
  */
 const getAll = async () => {
-    return users;
+    return [];
 }
 
 /**
@@ -31,8 +19,7 @@ const getAll = async () => {
  */
 const getUser = async (req) => {
     const id = Number(req.params.id);
-    const user = users.find(user => user.id === id);
-    return user;
+    return id;
 }
 
 /**

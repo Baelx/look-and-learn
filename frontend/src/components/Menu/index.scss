@@ -1,0 +1,36 @@
+@use '../../styles/base.scss';
+
+.nav-menu {
+    background-color: #dff1ff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 0.25rem;
+
+    .brand-link {
+        position: absolute;
+        left: 13px;
+        top: 10px;
+
+        img {
+            height: 45px;
+        }
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        
+        .nav-link {
+            font-size: 1.75rem;
+            color: black;
+            display: flex;
+            align-items: center;
+            
+            svg {
+                margin-right: 0.25rem;
+            }
+        }
+    }
+}

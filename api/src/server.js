@@ -1,5 +1,6 @@
 require('dotenv').config({ path: '.env' });
 const serverConfig = require("./config/serverConfig");
+const dbConnect = require("./config/db");
 const port = process.env.SERVER_PORT || 8080;
 
 // Save server configuration and enable logging.
@@ -10,6 +11,9 @@ const server = serverConfig(({
         // file: '/path/to/file'
     }
 }));
+
+// Connect to the DB.
+dbConnect().catch(err => console.log(err));
 
 // Start the server.
 const start = async () => {
